@@ -11,7 +11,6 @@ import copy
 from tracin.tracin import save_tracin_checkpoint
 from copy import deepcopy
 
-
 class LSTM(nn.Module):
     def __init__(self, input_size, output_size, hidden_dim, n_layers=1, device="cpu"):
         super(LSTM, self).__init__()
@@ -119,7 +118,7 @@ class LSTM(nn.Module):
         # print("outputs1 shape is ", output1.size())
         return MRR / test_num, HITS / test_num, loss / test_num, probs
 
-    def traintest(self, train, test, epochs, learning_rate=5e-3, momentum=0.9):
+    def traintest(self, train, test, epochs, learning_rate=5e-3, momentum=0.9, checkpoints_folder_name='checkpoints'):
         # NOTE: Added this deep copy
         train = deepcopy(train)
         test = deepcopy(test)
@@ -192,8 +191,7 @@ class LSTM(nn.Module):
 
                 start_time = time.time()
             if epoch % 10 == 0:
-                path = os.getcwd()
-                fname = path + "/checkpoints_v2/lstm_checkpoint_epoch" + str(epoch) + ".pt"
+                fname = os.path.join(os.getcwd(), checkpoints_folder_name, f"{epoch}.pt")
                 print(f"saving checkpoint to {fname}")
                 save_tracin_checkpoint(self, epoch, train_loss, optimizer, fname)
 

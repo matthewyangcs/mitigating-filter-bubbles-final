@@ -1,8 +1,8 @@
 """This file should probably be refactored
 
-Contains a lot of utils for manipulating data and preparing data for training
+The first half of this file is utilities used in preprocessing_for_lstm.py
 
-Also contains utils for analysis"""
+The second half of this file is utilities for measuring diversity"""
 
 from collections import Counter, defaultdict
 import pickle
@@ -178,6 +178,8 @@ def reindex_and_save_communities(
     return lstm_idx_to_community, unique_items, item_to_lstm_idx, lstm_idx_to_df_item
 
 
+################################
+#### DIVERSITY TOOLS BELOW
 def load_community_dict(file_path):
     """Opens a pickled dictionary"""
     with open(file_path, "rb") as f:
@@ -193,8 +195,22 @@ def get_communities(sequence, community_dict):
     return [community_dict[item] for item in sequence if item in community_dict]
 
 
+def average_diversity(predictions, community_dict, diversity_metric=None, k=10):
+    """Takes in a list of sequences of items and returns a list of diversities"""
+    if not diversity_metric:
+        raise ValueError("You must specify what diversity metric to use!")
+    count = []
+    for seq in predictions:
+        c = get_communities(seq[:k], community_dict)
+        count.append(diversity_metric(c, community_dict))
+    return count
+
+
+#### Diversity Metrics below
 def num_unique(communities, *args, **kwargs):
-    """Returns the number of unique communities"""
+    """Returns the number of unique communities
+    
+    *args and **kwargs are just there so it can be swapped in/out in locations that use community_dict"""
     return len(set(communities))
 
 # @cache
@@ -227,6 +243,6 @@ def _simpson_index(communities, community_dict):
             ans += 0
     return ans
 
-# @cache        
 def gini_simpson_index(communities, community_dict):
     return 1 - _simpson_index(communities, community_dict)
+

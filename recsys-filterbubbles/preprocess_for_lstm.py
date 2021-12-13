@@ -10,9 +10,9 @@ from LSTM_clean.utils import filter_and_split_data, printl, reindex_and_save_com
 ###################
 ### CONFIG
 # TODO: User should init these values
-LOAD_NAME = "twitch104k.csv"
-LOAD_FOLDER = "/raid/home/myang349/recsys-filterbubbles/data/"
-SAVE_FOLDER = "/raid/home/myang349/recsys-filterbubbles/data/twitch_sequence/"
+LOAD_NAME = "twitch105k.csv"
+LOAD_FOLDER = "/raid/home/myang349/mitigating-filter-bubbles-final/recsys-filterbubbles/data/"
+SAVE_FOLDER = "/raid/home/myang349/mitigating-filter-bubbles-final/recsys-filterbubbles/data/twitch_sequence/"
 
 # Use SAVE_PREFIX to mark different datasets
 SAVE_PREFIX = ""
