@@ -1,0 +1,3 @@
+[submodule "communitygraph"]
+	path = communitygraph
+	url = https://github.com/matthewyangcs/communitygraph.git
