@@ -59,18 +59,14 @@ class LSTM(nn.Module):
         )
         return hidden
 
-    def get_gradients(self):
+    def get_gradients(self, device):
         """Gets gradients of the model: To be used by tracin
 
         Returns:
             [type]: 1D torch tensor of gradients
         """
         list_params = list(self.parameters())
-        # print("list_params \n",list_params)
-        # print("grads \n", [l.grad for l in list_params])
-        gradients = torch.cat(
-            [torch.flatten(l.grad) for l in list_params if l.grad is not None]
-        )
+        gradients = torch.cat([torch.flatten(l.grad.to(device)) for l in list_params if l.grad is not None])
         return gradients
 
     def compute_metrics(self, test, test_labels):
