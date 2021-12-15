@@ -2,7 +2,7 @@
 
 If you wish to run the data pre-processing, then you must download the 100k_a.csv file located from(https://cseweb.ucsd.edu//~jmcauley/datasets.html#twitch) and put it in twitch_preprocessing/raw_data/
 
-Next, use `conda env create -f environment.yml` to create the environment.
+Next, use `conda env create -f environment.yml` to create the environment and `conda activate cse_prod_env` to activate the environment.
 
 Then, you can run all of our analysis and experiments via the notebooks.
 
