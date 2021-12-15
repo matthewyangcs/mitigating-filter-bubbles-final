@@ -6,11 +6,11 @@ Next, use `conda env create -f environment.yml` to create the environment and `c
 
 Then, you can run all of our analysis and experiments via the notebooks.
 
-twitch_preprocessing/ contains the following notebooks:
+twitch_preprocessing/ contains the following notebooks (with prefix partX_)
  1. Explores all of the data and performs experiments on optimizing community generation
  2. Generates the final communities used and additional pre-processing
 
-recsys-filterbubbles/ contains the following notebooks:
+recsys-filterbubbles/ contains the following notebooks (with prefix partX_)
  1. Preprocessing all of the data to the input format of the LSTM
  2. Trains a baseline model, explores and verifies the filter bubble effect
  3. Buckets all of the training and validation data into the categories mentioned in our paper (diverse, filter bubble, breaking bubble, etc.)
