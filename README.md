@@ -1,8 +1,8 @@
 # mitigating-filter-bubbles-final
 
-Need to put the 100k_a.csv file located from(https://cseweb.ucsd.edu//~jmcauley/datasets.html#twitch) in twitch_preprocessing/raw_data/
+If you wish to run the data pre-processing, then you must download the 100k_a.csv file located from(https://cseweb.ucsd.edu//~jmcauley/datasets.html#twitch) and put it in twitch_preprocessing/raw_data/
 
-First, use `conda env create -f environment.yml` to create the environment.
+Next, use `conda env create -f environment.yml` to create the environment.
 
 Then, you can run all of our analysis and experiments via the notebooks.
 
