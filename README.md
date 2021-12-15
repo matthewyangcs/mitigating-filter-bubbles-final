@@ -10,7 +10,7 @@ twitch_preprocessing/ contains the following notebooks:
  1. Explores all of the data and performs experiments on optimizing community generation
  2. Generates the final communities used and additional pre-processing
 
-recsys-filterbubbles/ contains:
+recsys-filterbubbles/ contains the following notebooks:
  1. Preprocessing all of the data to the input format of the LSTM
  2. Trains a baseline model, explores and verifies the filter bubble effect
  3. Buckets all of the training and validation data into the categories mentioned in our paper (diverse, filter bubble, breaking bubble, etc.)
