@@ -1,11 +1,15 @@
 # mitigating-filter-bubbles-final
 
+**WIP: Add directions for how to use the modules**
+
 If you wish to run the data pre-processing, then you must download the 100k_a.csv file located from(https://cseweb.ucsd.edu//~jmcauley/datasets.html#twitch) and put it in twitch_preprocessing/raw_data/
 
 Next, use `conda env create -f environment.yml` to create the environment and `conda activate cse_prod_env` to activate the environment.
 
 Then, you can run all of our analysis and experiments via the notebooks.
 
+
+## Reproducible Experiments
 twitch_preprocessing/ contains the following notebooks (with prefix partX_)
  1. Explores all of the data and performs experiments on optimizing community generation
  2. Generates the final communities used and additional pre-processing
